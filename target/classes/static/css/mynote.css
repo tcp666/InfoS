@@ -1,0 +1,362 @@
+
+* {
+    padding: 0;
+    margin: 0;
+
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+}
+
+body>.mainNav{
+    position: fixed;
+}
+
+.content > .main {
+    width: 60%;
+    height: auto;
+    margin: 0 auto;
+    /*position: fixed;*/
+    display: block;
+    overflow: auto;
+}
+
+.main > .top {
+    width: 100%;
+    height: 300px;
+    background-image: url(../images/mynote_1.jpg);
+    background-repeat: repeat;
+    background-size: 100%;
+    margin-top: 45px;
+}
+
+.top > img {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 45px;
+    border-radius: 100px;
+}
+
+.top > .MyName {
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    font-style: normal;
+    text-decoration: none;
+    text-align: center;
+    size: 45px;
+    list-style: none;
+    display: inline-block;
+    margin-top: 45px;
+    font-family: Arial;
+    font-weight: bold;
+    color: silver;
+}
+
+.top > .userPersonalized {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 12px;
+    line-height: 12px;
+    font-style: normal;
+    text-decoration: none;
+    text-align: center;
+    size: 12px;
+    list-style: none;
+    display: inline-block;
+    color: black;
+    margin: 0px auto;
+    /*font-family:"Nirmala UI";*/
+    /*font-weight:normal;*/
+    color: silver;
+}
+
+.top > ul {
+    width: 100%;
+    height: 30px;
+    background-color: #f6fbfd;
+    display: block;
+    position: relative;
+    top: 70px;
+    border: 2px #f6fbfd;
+    border-top: none;
+    font-style: normal;
+    margin-top: -4px;
+}
+
+.top > ul > li {
+    width: 33%;
+    height: 100%;
+    display: block;
+    line-height: 33px;
+    size: 33px;
+    font-style: normal;
+    list-style: none;
+    text-align: center;
+    text-decoration: none;
+    float: left;
+}
+
+.top > ul > li > a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    line-height: 33px;
+    size: 33px;
+    font-style: normal;
+    list-style: none;
+    text-align: center;
+    text-decoration: none;
+    float: left;
+}
+
+.main > .left {
+    width: 32%;
+    height: 540px;
+    margin-top: 30px;
+    background-color: #ffffff;
+    display: block;
+    float: left;
+}
+
+.left > .left_top {
+    width: 100%;
+    height: auto;
+    display: block;
+    float: left;
+}
+
+.left_top > li {
+    width: 100%;
+    height: 55px;
+    line-height: 55px;
+    text-decoration: none;
+    font-style: normal;
+    list-style: none;
+    display: inline-block;
+    font-size: 25px;
+    color: #2b2b2b;
+}
+
+.left_top > li > img {
+    width: 50px;
+    height: 50px;
+    display: block;
+    float: left;
+    margin-left: 55px;
+}
+
+.left_top > li > a {
+    width: auto;
+    height: 55px;
+    line-height: 55px;
+    text-decoration: none;
+    font-style: normal;
+    list-style: none;
+    display: block;
+
+    float: left;
+    font-size: 25px;
+    color: #2b2b2b;
+}
+
+.main > .right {
+    width: 66%;
+    height: auto;
+    margin-top: 30px;
+    background-color: #ffffff;
+    display: block;
+    float: right;
+    overflow: auto;
+
+
+}
+
+.right > footer {
+    width: 100%;
+    height: 50px;
+    display: block;
+    float: left;
+    border-bottom: 1px whitesmoke solid;
+}
+
+.right > footer > .h3 {
+    display: block;
+    float: left;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 25px;
+
+}
+
+.right > footer > .h5 {
+    display: block;
+    height: 50px;
+    float: left;
+    text-align: center;
+    line-height: 50px;
+    font-size: 14px;
+
+}
+
+.right > .littlefunc {
+    width: 100%;
+    height: 50px;
+    margin: auto 0;
+    display: block;
+    float: left;
+    list-style: none;
+    border-bottom: 1px whitesmoke solid;
+    /*background-color: red;*/
+}
+
+.right > .littlefunc > .right_fun {
+    width: 30%;
+    height: 50px;
+    font-style: normal;
+    display: block;
+    float: left;
+    list-style: none;
+    /*background-color: red;*/
+}
+
+.right > .littlefunc > .right_fun > p {
+
+    font-style: normal;
+    width: auto;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    text-decoration: none;
+    color: #ff6025;
+    margin-right: 10px;
+    display: block;
+    float: left;
+}
+
+.littlefunc > .littlesearch {
+    font-style: normal;
+    width: 60%;
+    height: 100%;
+    margin: auto 0;
+    display: block;
+    float: right;
+
+}
+
+.littlesearch > .search {
+
+    width: 90%;
+    height: 40px;
+    display: block;
+    float: left;
+    font-style: normal;
+    background-color: #f2f2f5;
+    line-height: 40px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 10px;
+    resize: none;
+    border: none;
+    font-size: 18px;
+    text-decoration: none;
+    outline: none;
+    display-outside: ruby-base-container;
+
+}
+
+.littlesearch > img {
+    width: auto;
+    height: 20px;
+    display: flow;
+    float: left;
+    margin: 0px;
+    position: relative;
+    right: 40px;
+    margin: 15px auto;
+}
+
+.right > .friendlist {
+    width: 100%;
+    height: auto;
+    display: block;
+    float: left;
+    background-color: #ffffff;
+    margin: 0;
+
+}
+
+.friendlist > .friend {
+    width: 290px;
+    height: 140px;
+    display: block;
+    float: left;
+    border: 1px solid  #d9d9d9;
+    margin-right: 2px;
+    margin-top: 2px;
+}
+
+.friend > .friend_left {
+    width: 67px;
+    height: 108px;
+    display: block;
+    float: left;
+    margin-top: 16px;
+    border-right: 2px solid #d9d9d9;
+}
+
+.friend_left > img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    display: block;
+    margin-left: 9px;
+    margin-top: 29px;
+
+
+}
+
+.friend > .friend_right {
+    width: 200px;
+    height: 100%;
+    display: block;
+    float: left;
+    border-left: 1px solid floralwhite;
+    margin: 0;
+
+}
+
+.friend_right>li{
+    margin: 2px;
+}
+
+.right > .bottom {
+    width: 100%;
+    height: 45px;
+    display: block;
+    float: left;
+    /*background-color: red;*/
+}
+
+.bottom > p {
+    width: 100%;
+    height: 45px;
+    font-style: normal;
+    text-decoration: #ff6025;
+    display: block;
+    line-height: 45px;
+    text-align: center;
+    font-size: 18px;
+
+}

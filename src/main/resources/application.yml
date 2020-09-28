@@ -1,0 +1,34 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    username: root
+    url: jdbc:mysql://127.0.0.1:3306/infoS?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT
+    password: tcp666
+  mvc:
+    #日期格式通配符(springMVC)
+    date-format: yyyy-MM-dd mm:ss
+  jackson:
+    #日期格式通配符(json)
+    date-format: yyyy-MM-dd HH:mm:ss
+    #设置时区(东八区)
+    time-zone: GMT+8
+  servlet:
+    multipart:
+      max-file-size:  1GB
+      max-request-size: 1GB
+
+#mybatis配置
+#mybatis.dao-locations=classpath:dao/*.xml
+mybatis:
+  type-aliases-package: com.keshe.entity
+  configuration:
+    #数据库表名下划线与pojo类名称大写对应
+    map-underscore-to-camel-case: true
+mapper:
+  identity: MYSQL
+
+# 日志级别
+logging:
+  level:
+    root: info

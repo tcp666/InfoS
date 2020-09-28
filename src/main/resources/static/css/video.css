@@ -1,0 +1,298 @@
+body>.mainNav{
+
+    position: fixed;
+    z-index: 100;
+}
+
+
+.content {
+    width: 100%;
+    height: 800px;
+    /*background: green;*/
+    background-image: url("../images/sky.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: block;
+    float: left;
+    /*position: fixed;*/
+
+}
+
+.content > .mainLeft {
+    width: 15%;
+    height: 800px;
+    /*background-color:red;*/
+    display: block;
+    float: left;
+    position: relative;
+    left: 5%;
+    top: 65px;
+    /*position: fixed;*/
+    overflow: auto;
+
+}
+
+.content > .main {
+    width: 60%;
+    height: 1000px;
+    /*background-color: silver;*/
+    display: block;
+    margin: 0 auto;
+    /*overflow: auto; !*background-color: yellow;*!*/
+
+}
+
+.mainLeft > .types {
+    width: 100%;
+    height: 900px;
+    /*overflow: auto;*/
+}
+
+.types > li {
+    margin: 0;
+    text-decoration: navajowhite;
+    list-style: none;
+    font-style: normal;
+    display: block;
+    width: 100%;
+    height: 40px;
+    line-height: normal;
+    text-align: center;
+}
+
+.types > li:hover {
+    margin: 0;
+    text-decoration: navajowhite;
+    list-style: none;
+    font-style: normal;
+    display: block;
+    width: 100%;
+    height: 40px;
+    line-height: normal;
+    text-align: center;
+    background-color: #c0c0c0;
+    opacity: 0.5;
+}
+
+
+.types > li > a {
+    margin: 0;
+    font-style: normal;
+    text-decoration: none;
+    width: auto;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    color: #3c3f41;
+}
+
+.main > .mainVideo {
+    width: 100%;
+    height: 500px;
+    display: block;
+    margin: 0 auto;
+    border-top: 1px lavender solid;
+}
+
+.mainVideo > .userInfo {
+    width: 100%;
+    height: 65px;
+    /*background-color: yellow;*/
+    display: block;
+    float: left;
+    /*border-top:2px solid #ff6025;*/
+}
+
+.userInfo > img {
+    width: 65px;
+    height: 65px;
+    border-radius: 80px;
+    /*background-color: #ff71e7;*/
+    margin-left: 0px;
+    display: block;
+    float: left;
+
+
+}
+
+.userInfo > .userSimple {
+    width: 260px;
+    height: 65px;
+    display: block;
+    /*background-color: green;*/
+    display: block;
+    float: left;
+    margin-left: 4px;
+}
+
+
+.userInfo > .userFunc {
+    width: 200px;
+    height: 20px;
+    /*background-color: hotpink;*/
+    display: block;
+    float: right;
+    background-image: url("../images/conf.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    opacity: 0.5;
+}
+
+
+.userFunc > .selected {
+    width: 100%;
+    height: 25px;
+    display: none;
+    /*background-color: yellow;*/
+    border: none;
+}
+
+.userFunc > .selected > li {
+    width: 100%;
+    height: 25px;
+    /*background-color: yellow;*/
+    border: none;
+    text-align: center;
+    line-height: 25px;
+    text-decoration: none;
+    color: #ff6025;
+}
+
+.userFunc:hover > .selected {
+    width: 100%;
+    height: auto;
+    display: block;
+    /*background-color: yellow;*/
+    margin-top: 20px;
+    border: none;
+}
+
+.selected > li:hover {
+    background-color: #ff6025;
+}
+
+.main > #topic {
+    width: 100%;
+    height: 33px;
+    font-style: normal;
+    text-decoration: none;
+    font-family: "Times New Roman";
+    color: #fff110;
+    size: 33px;
+    line-height: 33px;
+    text-align: center;
+    display: block;
+    margin: 100px auto;
+
+}
+
+.mainVideo > .remark {
+    width: 70%;
+    height: 45px;
+    display: none;
+    margin: 0 20px;
+    border: #ff6025 2px solid;
+
+}
+
+.main > .video {
+    width: 100%;
+    height: 481px;
+    display: block;
+    float: left;
+}
+
+.main > .allVideos {
+    width: 70%;
+    height: 100%;
+    display: block;
+    margin: 0 65px;
+}
+
+.allVideos > span {
+    width: 100%;
+    display: block;
+    height: 35px;
+    font-family: "Times New Roman";
+    font-style: normal;
+    color: #ff6025;
+    size: 35px;
+    text-align: left;
+
+}
+
+.allVideos > .littlev {
+    width: 24%;
+    height: auto;
+    display: block;
+    float: left;
+    margin: 3px;
+}
+
+.littlev > video {
+    width: 100%;
+    height: 100px;
+    display: block;
+    font-style: normal;
+    text-decoration: navajowhite;
+    box-sizing: border-box;
+}
+
+.littlev > .p {
+    width: 100%;
+    height: auto;
+    display: block;
+    font-style: normal;
+    text-decoration: none;
+    text-align: center;
+}
+
+.sysMessage {
+    width: 200px;
+    height: auto;
+}
+
+.sysMessage > select {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.sysMessage > select > option {
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    text-decoration: none;
+    text-align: center;
+    size: 35px;
+    color: lightslategrey;
+}
+
+#notices{
+    width: 15px;
+    height: 15px;
+    display: block;
+    float: left;
+    background-color: red;
+    color: #f6fbfd;
+    position: relative;
+    top: 10px;
+    right: -86px;
+    font-size: 9px;
+    border-radius: 15px;
+    line-height: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

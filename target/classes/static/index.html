@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人主页</title>
+</head>
+<link rel="stylesheet" href="./css/main.css">
+
+<body>
+<nav class="mainNav" style="z-index: 9">
+    <div class="logo">
+
+    </div>
+    <div class="functions">
+        <textarea class="search" placeholder="大家正在搜:真相奶茶"></textarea><img src="images/search.png" alt=""
+                                                                          onclick="search()">
+        <ul>
+            <li><a href="person.html" id="person"></a></li>
+            <li><a href="home.html">首页</a></li>
+            <li><a href="video.html">视频</a></li>
+            <li><a href="mynote.html">关注</a></li>
+            <li><a href="chatroom.html" onclick="function f() {
+                document.getElementById('notices').innerText=0;
+              document.getElementById('notices').style.display='none';
+            }">聊天</a></li>
+        </ul>
+    </div>
+    <div class="setting">
+        <ul>
+            <li class="setting-message">
+                <!-- 下拉小三角 -->
+                消息<p id="notices" style="display: none">0</p>
+                <div class="setting-wrapper">
+                    <!-- <div class="triangle"></div> -->
+                    <ul class="drop-down-message">
+                        <li><a href="javascript:;">@我的</a></li>
+                        <li><a href="javascript:;">评论</a></li>
+                        <li><a href="javascript:;">赞</a></li>
+                        <li><a href="javascript:;">私信</a></li>
+                        <li><a href="javascript:;">未关注人私信</a></li>
+                        <li><a href="javascript:;">群通知</a></li>
+                        <li class="last-mes"><a href="javascript:;">消息设置</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="message-setting">
+                设置
+                <div class="message-wrapper">
+                    <ul class="drop-down-setting">
+                        <li><a href="javascript:;">账号设置</a></li>
+                        <li><a href="javascript:;">会员中心</a></li>
+                        <li><a href="javascript:;">V认证</a></li>
+                        <li><a href="javascript:;">账号安全</a></li>
+                        <li><a href="javascript:;">隐私设置</a></li>
+                        <li><a href="javascript:;">屏蔽设置</a></li>
+                        <li><a href="javascript:;">消息设置</a></li>
+                        <li><a href="javascript:;">帮助中心</a></li>
+                        <li><a href="javascript:;" class="out">退出</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>其他</li>
+        </ul>
+    </div>
+</nav>
+<div class="content">
+<!--    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="https://music.163.com/outchain/player?type=2&id=255947&auto=0&height=66"></iframe>-->
+    <div class="main">
+
+    </div>
+</div>
+
+</body>
+</html>

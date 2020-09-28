@@ -1,0 +1,292 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+/*滚动条 start*/
+::-webkit-scrollbar {
+    width: 3px;
+    height: 4px;
+    /*background-color: #fd271d;*/
+    background-color: rgba(0, 0, 0, .1);
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background: #fff;
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    /*background-color: rgba(7, 170, 247, 0.7);*/
+    background-color: rgba(0, 0, 0, .1);
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+    border-radius: 3px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    /*background-color: rgba(7, 170, 247, 1);*/
+    background-color: rgba(0, 0, 0, .1);
+
+}
+body>.content{
+    width:100%;
+    height:655px;
+    /*background: green;*/
+    /*overflow: auto;*/
+    overflow: hidden;
+    background-image: url("../images/body_bg.jpg");
+    background-size: 100%;
+    background-repeat:no-repeat ;
+    display: block;
+
+}
+.content>.main{
+    width: 65%;
+    height: 655px;
+    display: block;
+    margin: 0 auto;
+    overflow: auto;
+
+}
+.main>.menu{
+
+    position: static;
+    width: 15%;
+    height: 655px;
+    /*padding-left: 10%;*/
+    float: left;
+    margin:0 0;
+    overflow: auto;
+    opacity:0.5;
+    border: 5px;
+    /*background-color: ;*/
+
+}
+
+.main>.right{
+
+    width:85%;
+    height:655px;
+    padding-left: 0;
+    float: left;
+    margin: 0 0;
+    overflow: auto;
+    border-color: #ff6025;
+    background-color:white;
+}
+.right>article{
+    width: 100%;
+    height: 100%;
+    display: block;
+    float: right;
+}
+
+.right>article>article{
+    width: 100%;
+    height: 100%;
+    display: block;
+    float: right;
+}
+.right>article>article>.homething{
+    width: 100%;
+    height: 100%;
+    display: block;
+    float: left;
+}
+
+a:link{
+    /*点之前*/
+    color: black;
+    /*取消下划线*/
+    text-decoration: none;
+}
+a:visited{
+    /*点之后 返回此页面*/
+    color: black;
+}
+a:hover{
+    /*放上去*/
+    color:#122b40;
+}
+a:active{
+    /*点之后*/
+    color: black;
+}
+.thing{
+    display: block;
+    float: left;
+    width:100%;
+    height: auto;
+    /*background-colo:white;*/
+    /*position:relative;*/
+
+    left: 5%;
+
+
+
+}
+.head{
+    /*头像*/
+    width:20%;
+    height:auto;
+    /*background-color:white;*/
+    /*position: absolute;*/
+    position:relative;
+    left:3%;
+    float: left;
+    /*background-color: blue;*/
+}
+.massage{
+    /*消息*/
+    width:75%;
+    height:auto;
+    /*background-color:white;*/
+    /*position: absolute;*/
+    position:relative;
+    float: right;
+    /*background-color: yellow;*/
+}
+.but{
+     /*点赞 转发 按键*/
+     width:100%;
+     height:40px;
+     /*background-color:white;*/
+     /*position: absolute;*/
+     position:relative;
+     /*left: 3%;*/
+     float: left;
+     background-color: #fffff0;
+ }
+.thing>.background{
+    /*消息分割*/
+    width:100%;
+    height:10px;
+    opacity: 0.5;
+    /*position: absolute;*/
+    position:relative;
+    float: left;
+    background-color:#66afe9;
+}
+
+#menu a{
+    /*background-color: white;*/
+    word-wrap: inherit;
+    color: white;
+    line-height: 40px;
+    text-indent:4em;
+    text-decoration: none;
+    letter-spacing: 5px;
+
+}
+
+.text{
+     display:block;
+     margin-left:auto;
+     margin-right:auto;
+ }
+.thing>.but1 {
+    height: 35px;
+    width: 35px;
+    position: relative;
+    background: url("../images/biaoqing.png") no-repeat ;
+    background-size: 100%;
+    font-style: normal;
+    list-style: none;
+    display: block;
+    text-decoration: none;
+    float: left;
+    margin-left: 5%;
+}
+.thing>.but2{
+    height: 35px;
+    width: 35px;
+    background: url("../images/tupian.png") no-repeat ;
+    background-size: 100%;
+   font-style: normal;
+    list-style: none;
+    display: block;
+    text-decoration: none;
+    float: left;
+}
+.thing>.but3 {
+    height: 35px;
+    width: 35px;
+    background: url("../images/shipin.png") no-repeat ;
+    background-size: 100%;
+    font-style: normal;
+    list-style: none;
+    display: block;
+    text-decoration: none;
+    float: left;
+}
+
+
+.thing>p{
+    margin: 0;
+    width: auto;
+    height: 35px;
+    text-decoration: none;
+    font-style: normal;
+    line-height: 35px;
+    text-align: center;
+    margin-right: 20px;
+    display: block;
+    padding-top: -2px;
+    float: left;
+
+
+}
+.sub {
+    margin: 0;
+    padding: 0;
+    height: 30px;
+    width: 50px;
+    background-color: #007bff;
+    text-decoration: none;
+    font-style: normal;
+    display: block;
+    float: right;
+    position: relative;
+    right: 5%;
+    /*top: 5px;*/
+    /*border: none;*/
+    /*outline: none;*/
+    /*cursor: pointer;*/
+}
+
+.round_icon{
+    top: 10px;
+    width: 100px;
+    height:100px;
+    display: flex;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+/*.round_icon{*/
+    /*border-radius: 5px;*/
+/*}*/
+
+.backup a{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,.2);
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #416378;
+    font-size: 20px;
+}

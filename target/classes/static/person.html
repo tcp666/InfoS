@@ -1,0 +1,205 @@
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <title>个人主页</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/person.css">
+    <link rel="shortcut icon" href="./images/logo.png">
+    <link rel = "stylesheet" href = "./css/font/css/all.css">
+
+</head>
+<body>
+<nav class="mainNav" style="z-index: 9">
+    <div class="logo">
+
+    </div>
+    <div class="functions">
+        <textarea class="search" placeholder="大家正在搜:真相奶茶"></textarea><img src="images/search.png" alt=""
+                                                                          onclick="search()">
+        <ul>
+            <li><a href="person.html" id="person"></a></li>
+            <li><a href="home.html">首页</a></li>
+            <li><a href="video.html">视频</a></li>
+            <li><a href="mynote.html">关注</a></li>
+            <li><a href="chatroom.html" onclick="function f() {
+                document.getElementById('notices').innerText=0;
+              document.getElementById('notices').style.display='none';
+            }">聊天</a></li>
+        </ul>
+    </div>
+    <div class="setting">
+        <ul>
+            <li class="setting-message">
+                <!-- 下拉小三角 -->
+                消息<p id="notices" style="display: none">0</p>
+                <div class="setting-wrapper">
+                    <!-- <div class="triangle"></div> -->
+                    <ul class="drop-down-message">
+                        <li><a href="javascript:;">@我的</a></li>
+                        <li><a href="javascript:;">评论</a></li>
+                        <li><a href="javascript:;">赞</a></li>
+                        <li><a href="javascript:;">私信</a></li>
+                        <li><a href="javascript:;">未关注人私信</a></li>
+                        <li><a href="javascript:;">群通知</a></li>
+                        <li class="last-mes"><a href="javascript:;">消息设置</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="message-setting">
+                设置
+                <div class="message-wrapper">
+                    <ul class="drop-down-setting">
+                        <li><a href="javascript:;">账号设置</a></li>
+                        <li><a href="javascript:;">会员中心</a></li>
+                        <li><a href="javascript:;">V认证</a></li>
+                        <li><a href="javascript:;">账号安全</a></li>
+                        <li><a href="javascript:;">隐私设置</a></li>
+                        <li><a href="javascript:;">屏蔽设置</a></li>
+                        <li><a href="javascript:;">消息设置</a></li>
+                        <li><a href="javascript:;">帮助中心</a></li>
+                        <li><a href="javascript:;" class="out">退出</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>其他</li>
+        </ul>
+    </div>
+</nav>
+<div class="content">
+    <div class="main">
+        <!--修改头像-->
+        <div class="mod-avatar-wrapper" id="modavatarwrapper">
+            <div class="mod-avatar">
+                <div class="mod-top">
+                    <span>头像设置</span>
+                    <span id="window-close-button"><i class="fas fa-window-close"></i></span>
+                </div>
+<!--                上传头像-->
+                <div class="sub-avatar-wrapper">
+                    <div class="sub-avatar">
+                        <!-- 包含块设置样式美化 -->
+                        <div id="bea-input">
+<!--                            <i class="fas fa-cloud-upload-alt"></i>-->
+                            <form action="" id="changehead"  method="post">
+                                <input type = "file" id="avatar-select" name="file" title="请选择上传图片">
+                            </form>
+                            <span>选择图片</span>
+                        </div>
+                        <!-- 图片预览加在这儿-->
+                        <div class="img-wrapper">
+                            <img  alt = "" id="avatar-preview">
+                        </div>
+                    </div>
+                    <!--                    确认或取消-->
+                    <div class="con-cancel">
+                        <button id="sub-confirm">确认</button>
+                        <button id="sub-cancel">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 顶部头像部分 -->
+        <div class="top">
+            <div class="avatar"  id="avatar">
+                <img src = ""  alt = "头像" id="headp">
+            </div>
+            <p id="nickname"></p>
+            <div class="mod">
+                <a href = "javascript:;" class="modify">修改个人资料</a>
+            </div>
+            <!--            <p id="info-change">一句话介绍一下自己吧，让别人更了解你</p>-->
+        </div>
+        <!--        主体导航-->
+        <nav class="middle">
+            <a href = "javascript:;" id="selfpage">我的主页</a>
+            <a href = "javascript:;" id="follow">我的关注</a>
+        </nav>
+
+        <!--        主页内容-->
+        <div class="bottom">
+            <div class="bottom-left">
+                <!--                动态及粉丝数量-->
+                <div class="infos">
+                    <a id="we" href = "javascript:;">
+                        <span id="we-num"></span><br>
+                        <span >说说</span>
+                    </a>
+                    <span id="line">|</span>
+                    <a id="fans" href = "javascript:;">
+                        <span id="fans-num"></span><br>
+                        <span >粉丝</span>
+                    </a>
+                </div>
+                <div class="images">
+                    <p class="images-header">相册</p>
+                    <img src = "./images/preview.jpg" alt = "相册">
+                    <img src = "./images/preview.jpg" alt = "相册">
+                    <a href = "javascript:;" class="more-img">查看更多&nbsp;></a>
+                </div>
+            </div>
+            <div class="bottom-right">
+                <!--                    修改个人资料-->
+                <div class="modify-wrapper">
+                    <div class="modify-info">
+                        <div class="mod-title">
+                            <span class="mod-infos">基本信息</span>
+                            <!--                                <div class="row-line"></div>-->
+<!--                            <button class="mod-btn" id="save" type="submit">保存</button>-->
+                            <input id="save" class="save" value="保存">
+                        </div>
+                        <!-- 修改信息列表 -->
+                        <ul class="mod-info-list">
+                            <li class="userName">用户名：<input type = "text" placeholder="姓名" id="username"></li>
+                            <li class="sex">性别：<input type = "text" placeholder="性别" id="sex"></li>
+                            <!--                                <li class="birth">生日：<input type = "text" placeholder="生日"></li>-->
+                            <li class="birth">
+                                生日：
+                                <input type="date" id="birthday">
+                            </li>
+                            <!--                                个性签名-->
+                            <li class="personalized">个性签名：<input type = "text" placeholder="个性签名" id="personalized"></li>
+                            <li class="realName">真实姓名：<input type = "text" placeholder="请输入真实姓名" id="realname"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="nav-right">
+                    <a href = "#" id="all-blog">全部</a>
+                    <a href = "javascript:;" id="articles">动态</a>
+                    <a href = "javascript:;" id="videos">视频</a>
+                    <!--                    搜索微博-->
+                    <!--                    <div class="right-search">-->
+                    <!--                        <input type = "text">-->
+                    <!--                    </div>-->
+                </div>
+                <ul class="blogs">
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="back">
+    <!--回到顶部-->
+    <a class="back-top" href="#">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+</body>
+<script src ="js/jquery.min.js"></script>
+<script src ="js/jquery.cookie.js"></script>
+<script src ="js/person2.js"></script>
+<script>
+
+    var modify = document.getElementsByClassName("modify")[0];
+    modify.onclick = function(){
+        // alert("test");
+        var modifyWrapper = document.getElementsByClassName("modify-wrapper")[0];
+        modifyWrapper.style.display = "block";
+
+    };
+
+    $("#person").innerText=$.cookie("userName");
+</script>
+</html>

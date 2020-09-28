@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> 动态详情 </title>
+    <link rel="stylesheet" href="css/particulars.css" type="text/css">
+    <link rel = "stylesheet" href = "./css/main.css">
+    <link rel="shortcut icon" href="./images/logo.png">
+
+</head>
+<body>
+<!--导航条-->
+<nav class="mainNav" style="z-index: 9">
+    <div class="logo">
+
+    </div>
+    <div class="functions">
+        <textarea class="search" placeholder="大家正在搜:真相奶茶"></textarea><img src="images/search.png" alt=""
+                                                                          onclick="search()">
+        <ul>
+            <li><a href="person.html" id="person"></a></li>
+            <li><a href="home.html">首页</a></li>
+            <li><a href="video.html">视频</a></li>
+            <li><a href="mynote.html">关注</a></li>
+            <li><a href="chatroom.html" onclick="function f() {
+                document.getElementById('notices').innerText=0;
+              document.getElementById('notices').style.display='none';
+            }">聊天</a></li>
+        </ul>
+    </div>
+    <div class="setting">
+        <ul>
+            <li class="setting-message">
+                <!-- 下拉小三角 -->
+                消息<p id="notices" style="display: none">0</p>
+                <div class="setting-wrapper">
+                    <!-- <div class="triangle"></div> -->
+                    <ul class="drop-down-message">
+                        <li><a href="javascript:;">@我的</a></li>
+                        <li><a href="javascript:;">评论</a></li>
+                        <li><a href="javascript:;">赞</a></li>
+                        <li><a href="javascript:;">私信</a></li>
+                        <li><a href="javascript:;">未关注人私信</a></li>
+                        <li><a href="javascript:;">群通知</a></li>
+                        <li class="last-mes"><a href="javascript:;">消息设置</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="message-setting">
+                设置
+                <div class="message-wrapper">
+                    <ul class="drop-down-setting">
+                        <li><a href="javascript:;">账号设置</a></li>
+                        <li><a href="javascript:;">会员中心</a></li>
+                        <li><a href="javascript:;">V认证</a></li>
+                        <li><a href="javascript:;">账号安全</a></li>
+                        <li><a href="javascript:;">隐私设置</a></li>
+                        <li><a href="javascript:;">屏蔽设置</a></li>
+                        <li><a href="javascript:;">消息设置</a></li>
+                        <li><a href="javascript:;">帮助中心</a></li>
+                        <li><a href="javascript:;" class="out">退出</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>其他</li>
+        </ul>
+    </div>
+</nav>
+<!--内容大框架-->
+<div class="content">
+
+    <div class="main">
+        <!--动态部分 左-->
+        <div class="thing" id="thing">
+
+
+            <div class="butt">
+
+                <li><a href="#">收藏</a></li>
+                <li><a href="#">转发</a></li>
+                <li><a href="#">评论</a></li><!--onclick="f()"-->
+                <!--<script  >-->
+                <!--function f() {-->
+                <!--// alert("弹出评论框");< img src="../images/head.png" >-->
+                <!--document.getElementById("com").innerHTML=-->
+                <!--"<img src='images/1.png' style='margin-left: 20px;margin-top: 10px;width: 40px;height: 40px;float: left'>" +-->
+                <!--"<textarea name='com' style='margin-top: 5px;margin-left: 5px; width: 500px;height: 100px; line-height: 150%;padding: 10px'></textarea>"-->
+                <!--+"<button onclick='f1()' style='margin: 5px;background-color: #eb7350;color: white;padding:3px 15px;'>评论</button>";-->
+
+
+                <!--}-->
+                <!--function f1() {-->
+                <!--document.getElementById("hf").innerHTML=-->
+
+                <!--"<div class=\"comment\">" +-->
+                <!--"<img src='images/1.png' style='margin-left: 20px;margin-top: 10px;width: 40px;height: 40px;float: left'>" +-->
+                <!--"<p>dasdadsadasd</p>"-->
+                <!--+"<button onclick='com()' style='margin: 5px;background-color: #eb7350;color: white;padding:3px 15px;'>评论</button>"-->
+                <!--+"</div>";-->
+
+
+                <!--}-->
+                <!--</script>-->
+                <li><a href="#">点赞</a></li>
+
+            </div>
+
+            <!--评论部分-->
+
+            <div id="com">
+                <ul id="pn">
+                    <li class="list0">
+
+                        <div class="content">
+                            <div class="comment-list" id="comment-list">
+
+                                <!--                                <div class="comment" user="self">-->
+                                <!--                                    <div class="comment-right">-->
+                                <!--                                        <div class="comment-text"><span class="user">我：</span>看哭了留卡号吧</div>-->
+                                <!--                                        <div class="comment-date">-->
+                                <!--                                            <br>-->
+                                <!--                                            02-14 24:00-->
+                                <!--                                            <a class="comment-zan" href="javascript:;" total="0" my="0">赞</a>-->
+                                <!--                                            <a class="comment-dele" href="javascript:;">删除</a>-->
+                                <!--                                        </div>-->
+                                <!--                                    </div>-->
+                                <!--                                </div>-->
+                            </div>
+                            <div class="hf">
+                                <textarea type="text" id="text" class="hf-text" autocomplete="off" maxlength="100"
+                                          placeholder="评论..." onblur="textOnblur(this)" name="root"
+                                          onfocus=" textGetFocus(this)"> </textarea>
+                                <button class="hf-btn" onclick="send(this)">评论</button>
+                                <span class="hf-nub">0/100</span>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+                <script type="text/javascript">
+                    function textOnblur(obj) {
+                        //
+                        // if(obj.innerText.length==0){
+                        //     // console.log("change className....")
+                        //     obj.parentNode.className='hf';
+                        //     obj.value ='评论…';
+                        // }
+
+                    }
+
+                    function textGetFocus(obj) {
+                        // console.log(obj.parentNode)
+                        obj.parentNode.className = 'hf hf-on';
+                        obj.value = obj.value == '评论…' ? '' : obj.value;
+                    }
+
+                </script>
+            </div>
+
+        </div>
+        <!--该博主信息  右-->
+        <div class="self">
+            <a id="but3" href="#">Infos 认证 </a>
+            <p style="font-size: 15px">昵称 </p>
+            <br/>
+            <p>🚪 行业类别 优秀博主 编辑 </p>
+            <p>👉 简介： 好好学习 不熬夜</p>
+            <br/>
+            <a style="text-align: center; cursor: pointer;" href="#"> 更多 ＞</a>
+        </div>
+    </div>
+
+    <!--底部-->
+    <div class="foot">
+        <p>Infos 客服 客服热线 8888-8888</p>
+
+        <p>意见反馈 开放平台 商务合作</p>
+        <p>Copyright@2020-2020 Infos 开发小组</p>
+    </div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<script src="js/particulars.js"></script>
+
+<script>
+
+    $("#person").innerText=$.cookie("userName");
+</script>
+</body>
+</html>

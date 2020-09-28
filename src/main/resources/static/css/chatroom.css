@@ -1,0 +1,411 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: none;
+}
+
+a {
+    text-decoration: none;
+    color: #999999;
+}
+
+.content {
+    height: 800px;
+    overflow: hidden;
+
+}
+
+.content > .main {
+    width: 60%;
+    height: 700px;
+}
+
+/* 左侧联系人列表 */
+/* 个人头像框和昵称显示 */
+.main-left {
+    /* width: 320px; */
+    /*width: 35%;*/
+    width: 35%;
+    height: 800px;
+    background-color: #33353A;
+    display: block;
+    float: left;
+    overflow: auto;
+}
+
+/*滚动条 start*/
+::-webkit-scrollbar {
+    width: 3px;
+    height: 4px;
+    /*background-color: #fd271d;*/
+    background-color: rgba(0, 0, 0, .1);
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background: #fff;
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    /*background-color: rgba(7, 170, 247, 0.7);*/
+    background-color: rgba(0, 0, 0, .1);
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+    border-radius: 3px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    /*background-color: rgba(7, 170, 247, 1);*/
+    background-color: rgba(0, 0, 0, .1);
+
+}
+
+.main-left .left-top {
+    height: 71px;
+    line-height: 71px;
+    /* 设置为弹性盒子 */
+    display: flex;
+    /* 侧轴上的空白区域分布 */
+    align-items: center;
+    /* background-color: red; */
+    color: #ffffff;
+}
+
+.main-left .left-top .avatar-wrapper {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 20px;
+    /* 设置为圆形头像框 */
+    overflow: hidden;
+    margin-left: 20px;
+}
+
+.main-left .left-top .avatar-wrapper img {
+    width: 100%;
+}
+
+/* 搜索框 */
+.main-left .left-search-wrapper {
+    height: 52px;
+    line-height: 52px;
+    background-color: #33353A;
+    display: flex;
+    font-size: 14px;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px #404247 solid;
+}
+
+.main-left .left-search {
+    width: 288px;
+    height: 32px;
+    line-height: 32px;
+    background-color: #505155;
+    border-radius: 5px;
+    color: #CCCCCC;
+    padding-left: 10px;
+}
+
+.main-left .left-search input {
+    background-color: #505155;
+    outline: none;
+    color: #ffffff;
+    /* color: red; */
+    font-size: 14px;
+    margin-left: 2px;
+}
+
+.main-left .left-search input::placeholder {
+    font-size: 14px;
+    color: #CCCCCC;
+}
+
+
+/* 联系人列表 */
+/*.left-userList > li > a{*/
+/*    display: block;*/
+/*}*/
+.left-userList li {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px #2C2E31 solid;
+}
+
+/* 鼠标点击样式改变 */
+.left-userList li:active {
+    background-color: #3A3C42;
+}
+
+.left-userList li:active {
+    border-left: 2px solid #FF8F2C;
+    background-color: #292B2E;
+}
+
+/* 设置头像框圆形展示 */
+.left-userList .user-avatar-wrapper {
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+/* 右侧用户信息 */
+.left-userList .user-info {
+    padding: 0 10px;
+    color: #fff;
+}
+
+/* 用户昵称及消息发送时间 */
+.left-userList .user-info .user-info-top {
+    width: 220px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-userList .user-info .user-info-top .time {
+    color: #51555E;
+    font-size: 12px;
+}
+
+/* 消息内容 */
+.left-userList .user-info .user-info-content {
+    margin-top: 10px;
+    color: #999999;
+}
+
+/* 右侧聊天框 */
+.main-right {
+    width: 65%;
+    background-color: #EEEEEE;
+    height: 800px;
+    display: block;
+    float: right;
+    position: relative;
+}
+
+.main-right .no-chat {
+    /*设置无联系人时显示，其他时候隐藏*/
+    visibility: hidden;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.no-chat p {
+    width: 100%;
+    display: none;
+    /*height: 100%;*/
+    /*background-color: red;*/
+    margin-top: -50px;
+    color: #A3A7AE;
+    font-size: 16px;
+}
+
+/* 显示聊天内容 */
+.main-right .messages-wrapper {
+    width: 100%;
+}
+
+.main-right .messages {
+    width: 95%;
+    height: 550px;
+    overflow: auto;
+    padding: 0 12px;
+    /*background-color: green;*/
+}
+
+.messages .time {
+    width: 100%;
+    text-align: center;
+    color: #A3A7AE;
+    font-size: 12px;
+}
+
+/* 联系人信息及对话 */
+.messages .user-left,
+.messages .user-right {
+    width: 100%;
+    display: flex;
+    /*设置垂直居中显示*/
+    align-items: center;
+    margin: 15px 0;
+    position: relative;
+
+}
+
+.messages .user-left .img-wrapper-left, .img-wrapper-right {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    /*border: 2px solid red;*/
+    overflow: hidden;
+}
+
+.img-wrapper-left, .img-wrapper-right img {
+    width: 100%;
+}
+
+.user-left .triangle-left::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border: 8px solid red;
+    /*border-top: none;*/
+    border-color: #FFFFFF transparent transparent;
+    position: absolute;
+
+}
+
+/*左侧消息框显示*/
+.user-left .mes-left {
+    width: 60%;
+    height: auto;
+    background-color: #FFFFFF;
+    font-style: normal;
+    font-size: 16px;
+    margin: 9px;
+    padding: 5px;
+    border: 1px solid #E5E5E5;
+    text-decoration: none;
+    text-align: left;
+    line-height: 20px;
+    text-blink: auto;
+    word-break: keep-all;
+}
+/*设置文本的自动换行*/
+.mes-left,.mes-right{
+    /*word-break: break-all;*/
+    word-wrap: break-word;
+    max-width: 60%;
+}
+
+/*右侧消息显示*/
+.user-right {
+    /*float: right;*/
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+/*右侧小三角*/
+.user-right .triangle-right::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border: 8px solid #FFFFFF;
+    border-color: #FFFFFF transparent transparent;
+    position: absolute;
+    right: 41px;
+}
+
+.user-right .mes-right {
+    /*width: 60%;*/
+    width: auto;
+    height: auto;
+    background-color: #FFFFFF;
+    margin:9px;
+
+    padding: 5px;
+    font-size: 16px;
+    text-align: left;
+    line-height: 20px;
+    border: 1px solid #E5E5E5;
+    text-blink: auto;
+    word-break: keep-all;
+}
+
+/*输入聊天框设置*/
+.main-right .main-right-header {
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #D9D9D9;
+}
+
+.main-right .main-right-header .nickname {
+    font-size: 16px;
+    color: #808080;
+    margin-left: 5%;
+}
+
+.main-right .text {
+    width: 100%;
+    height: 100px;
+    /*设置底部聊天框定位*/
+    display: block;
+    float: left;
+
+    /*border: #ff6025 solid 1px;*/
+    border-left: none;;
+    border-right: none;
+    /*border-right: 1px solid #ff6025;*/
+}
+
+.text .text-top {
+    width: 95%;
+    padding: 0 12px;
+}
+
+.text .text-top a {
+    font-size: 18px;
+    color: #686E79;
+    margin-right: 12px;
+}
+
+.text-top a:hover {
+    color: #FF7B2C;
+}
+
+/*
+  按钮
+ style="width: 100px;height: 40px; display: block ;float: right"
+*/
+.text >#send {
+    width: 50px;
+    font-size: 20px;
+    height: 30px;
+    display: block;
+    float: right;
+    position: relative;
+    top: 100%;
+    color: #D9D9D9;
+    background-color: #ff6025;
+    border-radius: 4px;
+    margin: 0px;
+    outline: none;
+}
+
+.text #send:active {
+    outline: none;
+    transform: translateY(-2px);
+    transition: all 1ms;
+}
+
+.text-input .text-mes {
+    width: 95%;
+    height: 100%;
+    /*取消显示文本框的外边框*/
+    display: block;
+    float: left;
+    outline: none;
+    font-size: 20px;
+    background-color: #EEEEEE;
+    /*出现文字竖直滚动*/
+    overflow: auto;
+    /*禁止改变textarea的大小*/
+    resize: none;
+    padding: 0 10px;
+
+    border: none;
+    /*word-wrap: break-word;*/
+    word-break: break-all;
+}

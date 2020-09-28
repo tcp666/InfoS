@@ -1,0 +1,462 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+#pn {
+    width: 550px;
+    height: auto;
+    background: #fff;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.list0 {
+    padding: 20px 0;
+    position: relative;
+    border-top: 1px solid #eee;
+}
+
+.close {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #696e78;
+    font-size: 14px;
+    text-align: center;
+    line-height: 20px;
+}
+
+.close:hover {
+    color: #eb7350;
+}
+
+.content {
+    width: 450px;
+    line-height: 20px;
+    font-size: 14px;
+    margin-left: 30px;
+    background-color: whitesmoke;
+    text-align: left
+}
+
+.name {
+    color: #eb7350;
+}
+
+.pic {
+    margin: 5px 0;
+}
+
+.good:after {
+    clear: both;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+.good {
+    *zoom: 1;
+}
+
+.date {
+    float: left;
+    color: #808080;
+}
+
+.good a {
+    float: right;
+    color: #808080;
+}
+
+.people {
+    background: #F7F7F7;
+    height: 28px;
+    line-height: 28px;
+    padding-left: 10px;
+    margin: 5px 0;
+}
+
+.comment:after {
+    clear: both;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+.comment {
+    *zoom: 1;
+    padding: 10px 0;
+    border-top: 1px solid #eee;
+}
+
+.comment-left {
+    width: 30px;
+    float: left;
+    display: inline;
+    margin-right: 10px;
+}
+
+.comment-left img {
+    width: 30px;
+    height: 30px;
+}
+
+.comment-right {
+    float: left;
+    width: 410px;
+}
+
+.comment-text {
+    float: left;
+    line-height: 18px;
+}
+
+.comment-text span {
+    float: left;
+    color: #eb7350;
+}
+
+.comment-date {
+    font-size: 12px;
+    line-height: 18px;
+    color: grey;
+    position: relative;
+}
+
+.comment-zan {
+    position: absolute;
+    right: 40px;
+    bottom: 0;
+    color: #808080;
+}
+
+.comment-dele {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: #808080;
+}
+
+.hf:after {
+    clear: both;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+.hf {
+    *zoom: 1;
+}
+
+.hf-text {
+    float: left;
+    border: 1px solid #eee;
+    display: block;
+    height: 15px;
+    width: 438px;
+    padding: 5px;
+    resize: none;
+    color: black;
+    font-size: 12px;
+}
+
+.hf-on .hf-text {
+    height: 60px;
+    color: #333;
+    border: 1px solid #ff8140;
+}
+
+.hf-btn {
+    float: right;
+    width: 65px;
+    height: 26px;
+    background: #ff8140;
+    color: #fff;
+    font-size: 12px;
+    display: none;
+}
+
+.hf-btn-on {
+    background: #ff8140;
+    color: #fff;
+}
+
+.hf-nub {
+    float: right;
+    padding: 3px 5px;
+    color: #666;
+    display: none;
+}
+
+.hf-on .hf-btn {
+    display: inline;
+}
+
+.hf-on .hf-nub {
+    display: inline;
+}
+
+.content > .main {
+    width: 61%;
+    height: auto;
+    display: block;
+    margin: 15px auto;
+    overflow: auto;
+    /*background-color: red;*/
+    /*opacity: 0.5;*/
+}
+
+.content > .foot {
+    width: 100%;
+    height: 100px;
+    /*display: block;*/
+    padding-top: 35px;
+    margin: 0px auto;
+    /*position:absolute;*/
+    bottom: 0;
+    overflow: auto;
+    background-color: white;
+    text-align: center;
+    /*opacity: 0.5;*/
+}
+
+.main > .thing {
+
+    display: block;
+    width: 65%;
+    height: auto;
+    background-color: white;
+    /*position:relative;*/
+    font-style: normal;
+    font-weight: inherit;
+    float: left;
+
+}
+
+.thing > .message {
+    float: left;
+    /*display: block;*/
+    width: 100%;
+    height: auto;
+    margin-left: 0%;
+    background-color: white;
+    /*position:relative;*/
+
+
+}
+
+.thing > #com {
+    border: 1px solid black;
+    text-align: center;
+    width: 99%;
+    height: auto;
+    display: block;
+    margin: 0px auto;
+    overflow: auto;
+    /*background-color: red;*/
+    /*opacity: 0.5;*/
+}
+
+.thing > .comment {
+    border: 1px solid black;
+    text-align: center;
+    width: 99%;
+    height: auto;
+    display: block;
+    margin: 0px auto;
+    overflow: auto;
+    /*background-color: red;*/
+    /*opacity: 0.5;*/
+}
+
+.message > .head {
+    float: left;
+    /*display: block;*/
+    width: 15%;
+    height: auto;
+    margin-left: 0%;
+    background-color: white;
+    /*position:relative;*/
+
+
+}
+
+/*内容整体*/
+.message > .msg {
+    display: block;
+    width: 75%;
+    height: auto;
+    background-color: white;
+    /*position:relative;*/
+
+    float: left;
+}
+
+/*昵称 关注*/
+.msg > .name {
+    width: 100%;
+    height: 60px;
+    background-color: white;
+}
+
+/*.name li{*/
+/*display: inline;*/
+/*!*background-color: white;*!*/
+/*line-height: 40px;*/
+
+/*!*margin: 0px auto;*!*/
+/*width: 100px;*/
+
+/*}*/
+#but1 {
+    margin-left: 1%;
+    margin-top: 4%;
+    float: left;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: white;
+}
+
+#but2 {
+    margin-top: 4%;
+    margin-right: 5%;
+    float: right;
+    padding: 5px;
+    font-size: 15px;
+    background-color: honeydew;
+    border: 2px solid black;
+    border-radius: 5px;
+
+
+}
+
+#but3 {
+    border: 1px solid black;
+    /*border-style: dotted;*/
+    border-radius: 30px;
+    background-color: #58cfff;
+    line-height: 40px;
+    text-align: center;
+    padding-top: 8px;
+    padding-left: 20px;
+    padding-bottom: 8px;
+    padding-right: 20px;
+    color: white;
+    font-weight: bolder;
+
+}
+
+.name a:hover {
+    background-color: #ff6025;
+    color: #ff6025;
+    cursor: pointer;
+}
+
+/*内容信息*/
+.msg > .sub {
+    width: 100%;
+    height: auto;
+    background-color: whitesmoke;
+}
+
+.thing > .butt {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0px auto;
+    background-color: white;
+    /*position:relative;*/
+
+    /*float: left;*/
+}
+
+.butt li {
+    display: inline;
+    background-color: white;
+    line-height: 80px;
+    padding-left: 60px;
+    padding-right: 50px;
+    /*font-size: 15px;*/
+
+}
+
+.main > .self {
+    /*text-align: center;*/
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 5%;
+    display: block;
+    width: 28%;
+    height: auto;
+    margin-left: 2%;
+    background-color: white;
+    /*position:relative;*/
+    line-height: 200%;
+    float: left;
+}
+
+body {
+    overflow: auto;
+}
+
+
+body > .content {
+    width: 100%;
+    height: 655px;
+    margin: 0 auto;
+    /*background: green;*/
+    overflow: auto;
+    /*background-image: url("../images/newBg.jpg");*/
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: block;
+    float: left;
+    /*position: relative;*/
+    overflow: auto;
+}
+
+a:link {
+    /*点之前*/
+    color: black;
+    /*取消下划线*/
+    text-decoration: none;
+}
+
+a:visited {
+    /*点之后 返回此页面*/
+    color: black;
+}
+
+a:hover {
+    /*放上去*/
+    color: #122b40;
+}
+
+a:active {
+    /*点之后*/
+    color: black;
+}
+
+
+.round_icon {
+    margin-top: 10px;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    border-radius: 50%;
+    float: right;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}

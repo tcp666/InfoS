@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/logo.png">
+    <title>用户登录注册界面</title>
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/jigsaw.css">
+    <style>
+        #msg {
+            width: 100%;
+            line-height: 40px;
+            font-size: 14px;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="jq22-container" style="padding-top:100px">
+    <div class="login-wrap">
+        <div class="login-html" style="background-color: rgba(255,255,255,0.1)">
+            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">登录</label>
+            <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">注册</label>
+            <div class="login-form">
+                <form>
+                    <div class="sign-in-htm">
+                        <div class="group">
+                            <label for="login_username" class="label">用户名</label>
+                            <input name="userName" id="login_username" value="" type="text" class="input">
+                            <img src="" alt="" class="checkusername" id="checkusername">
+                        </div>
+                        <div class="group">
+                            <label for="login_password" class="label">密码</label>
+                            <input name="password" id="login_password" class="input" type="password">
+                            <img src="" alt="" class="checkuserpassword" id="checkuserpassword">
+                        </div>
+                        <div class="group">
+                            <div class="container">
+                                <div id="captcha" style="position: relative" data-type="password"></div>
+                                <div id="msg"></div>
+                            </div>
+                        </div>
+                        <div class="group">
+                            <input class="button" value="登录" id="login" style="text-align: center">
+                        </div>
+                        <div class="hr"></div>
+                        <div class="foot-lnk">
+                            <a href="reset.html">忘记密码?</a>
+                        </div>
+                    </div>
+                </form>
+                <form>
+                    <div class="sign-up-htm">
+                        <div class="group">
+                            <label for="register_username" class="label">用户名</label>
+                            <input id="register_username" type="text" class="input">
+                            <img src="" alt="" class="checkregisterusername" id="checkregisterusername">
+                        </div>
+                        <div class="group">
+                            <label for="register_password" class="label">密码</label>
+                            <input id="register_password" type="password" class="input">
+                            <img src="" alt="" class="checkregisterpassword" id="checkregisterpassword">
+                        </div>
+                        <div class="group">
+                            <label for="register_email" class="label">邮箱地址</label>
+                            <input id="register_email" type="text" class="input">
+                            <img src="" alt="" class="checkregisteremail" id="checkregisteremail">
+                        </div>
+                        <div class="group">
+                            <label for="register_checkcode" class="label">验证码</label>
+                            <input id="register_checkcode" type="text" class="input">
+                            <h3><p id="Tsinf" class="Tsinf">已发送验证码</p></h3>
+                        </div>
+                        <div class="group">
+                            <input type="button" class="button" value="获取验证码" id="sendcheckcode">
+                        </div>
+                        <div class="group">
+                            <input type="button" class="button" id="register" value="注册">
+                        </div>
+                        <div class="hr"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<script src="js/jigsaw.js"></script>
+<script>
+
+    // 滑动判定
+    let flag =false;
+    jigsaw.init(document.getElementById('captcha'), function () {
+        flag = true;
+        document.getElementById('msg').innerHTML = '验证成功！';
+    })
+
+
+    // login
+    $("#login_username").blur(function () {
+        var reg = /^[a-zA-Z0-9]{6,16}$/;
+        if (!(($("#login_username").val()).match(reg))) {
+            $("#login_username").val("格式错误");
+            $("#checkusername").attr("src","icon/wrong.png");
+        }else {
+            $("#checkusername").attr("src","icon/right.png");
+        }
+    });
+
+    $("#login_password").blur(function () {
+        var reg = /^[a-zA-Z0-9]{6,16}$/;
+        if (!(($("#login_password").val()).match(reg))) {
+            $("#login_password").val("密码格式错误");
+            $("#checkuserpassword").attr("src","icon/wrong.png");
+        }else {
+            $("#checkuserpassword").attr("src","icon/right.png");
+        }
+    });
+
+    $("#login").click(function () {
+        if (flag){
+        var userName = $("#login_username").val();
+        var password = $("#login_password").val();
+        $.ajax({
+            type:"POST",
+            url:"user/login",
+            data:{userName : userName,
+                    password : password
+            },
+            success:function (result) {
+                if(result.success)
+                {
+                    $.cookie("userId",result.data.userId);
+                    $.cookie("userName",userName)
+                    window.location.href="home.html";
+                }
+                else {
+                    alert(result.errorMsg);
+                }},
+            error:function () {
+                console.log('出现错误');
+            }
+        });}
+        else {
+            alert("验证失败，请重新验证")
+        }
+    });
+
+
+    // register
+// 用户名查重
+    $("#register_username").blur(function () {
+        var userName = $("#register_username").val();//取值
+        if (!(/^[a-zA-Z0-9]{6,16}$/.test(userName))) {
+            $("#register_username").val("用户名格式错误");
+            $("#checkregisterusername").attr("src","icon/wrong.png");
+            return false;
+        }else {
+            $.ajax({//查重
+                type: "POST",
+                url: "user/verifyUserName",//
+                data: {userName: userName},//改这里
+                success: function (result) {
+                    if (result.success) {
+                        $("#checkregisterusername").attr("src","icon/right.png");
+                    } else {
+                        $("#checkregisterusername").attr("src","icon/wrong.png");
+                        $("#register_username").val("result.errorMsg");
+                    }
+                }
+            });
+        }
+    });
+
+// 邮箱查重
+    $("#register_email").blur(function () {
+        var email = $("#register_email").val();//取值
+        if (!(/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test(email))) {
+            $("#checkregisteremail").attr("src","icon/wrong.png");
+            $("#register_email").val('邮箱格式错误');
+            return false;
+        }else {
+            $.ajax({
+                type: "POST",
+                url: "user/verifyUserEmail",//改这里
+                data: {"userEmail": email},//改这里
+                success: function (result) {
+                    if (result.success) {
+                        $("#checkregisteremail").attr("src","icon/right.png");
+                    }else {
+                        $("#checkregisteremail").attr("src","icon/wrong.png");
+                        $("#register_email").val('result.errorMsg');
+                    }
+                }
+            });
+        }
+    })
+    ;
+
+// 密码格式
+    $("#register_password").blur(function () {
+        var password = $("#register_password").val();//取值
+        if (!(/^[0-9a-zA-Z]{6,16}$/.test(password))) {
+            $("#register_password").val("密码格式错误");
+            $("#checkregisterpassword").attr("src","icon/wrong.png");
+        }else {
+            $("#checkregisterpassword").attr("src","icon/right.png");
+        }
+    });
+
+//发送验证码
+    $("#sendcheckcode").click(function () {
+        var email = $("#register_email").val();//取值
+        $.ajax({
+            type: "POST",
+            url: "user/verifyCode",//改这里
+            data: {userEmail: email},//改这里
+            success: function (result) {
+                if (result.success) {
+                    $("#Tsinf").css("visibility","visible");
+                }else{
+                    $("#register_email").val('result.errMsg');
+                }
+            }
+        });
+    })
+    ;
+
+    // 注册
+    $("#register").click(function () {
+        var username = $("#register_username").val();
+        var email = $("#register_email").val();
+        var password = $("#register_password").val();
+        var verifyCode = $("#register_checkcode").val();
+        $.ajax({
+            type: "POST",
+            url: "user/register",//改这里
+            data: {             //改这里
+                userName: username,
+                userEmail: email,
+                password: password,
+                verifyCode: verifyCode
+            },
+            success: function (result) {
+                if (result.success) {
+                    alert("注册成功，请登录");
+                    window.location.href = "login.html";
+                }else {
+                    alert("注册失败");
+                }
+            }
+        });
+    })
+    ;
+</script>
+
+<script>
+
+    // var modify = document.getElementsByClassName("modify")[0];
+    // modify.onclick = function(){
+    //     // alert("test");
+    //     var modifyWrapper = document.getElementsByClassName("modify-wrapper")[0];
+    //     modifyWrapper.style.display = "block";
+    //
+    // };
+
+    $("#person").innerText=$.cookie("userName");
+</script>
+</html>

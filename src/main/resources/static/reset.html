@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/mylogo.png">
+    <title>用户修改密码界面</title>
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/jigsaw.css">
+    <style>
+        #msg {
+            width: 100%;
+            line-height: 40px;
+            font-size: 14px;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="jq22-container" style="padding-top:100px">
+    <div class="login-wrap">
+        <div class="login-html" style="background-color: rgba(255,255,255,0.1)">
+            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">忘记密码</label>
+            <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"></label>
+            <div class="login-form">
+                <form>
+                    <div class="sign-in-htm">
+                        <div class="group">
+                            <label for="reset_email" class="label">邮箱地址</label>
+                            <input name="reset_email" id="reset_email" type="text" class="input">
+                            <img src="" alt="" class="resetemail" id="resetemail">
+                        </div>
+                        <div class="group">
+                            <label for="reset_password1" class="label">密码</label>
+                            <input name="reset_password" id="reset_password1" type="password" class="input">
+                            <img src="" alt="" class="resetpass1" id="resetpass1">
+                        </div>
+                        <div class="group">
+                            <label for="reset_password2" class="label">请确认密码</label>
+                            <input name="reset_password" id="reset_password2" type="password" class="input">
+                            <img src="" alt="" class="resetpass2" id="resetpass2">
+                        </div>
+                        <div class="group">
+                            <label for="reset_checkcode" class="label">验证码</label>
+                            <input name="reset_checkcode" id="reset_checkcode" type="text" class="input">
+                            <h3><p id="Tsinf" class="Tsinf">已发送验证码</p></h3>
+                        </div>
+                        <div class="group">
+                            <input type="button" class="button" value="获取验证码" id="sendCheckcode">
+                        </div>
+                        <div class="group">
+                            <input type="button" class="button" id="reset" value="重置">
+                        </div>
+                        <div class="hr"></div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="js/jigsaw.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<script>
+
+    $("#reset_email").blur(function () {
+        var email = $("#reset_email").val();//取值
+        var reg=/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+        if (!reg.test(email)){
+            $("#reset_email").val("邮箱格式错误");
+        }else {
+            $.ajax({
+                type: "POST",
+                url: "user/verifyUserEmail",//改这里
+                data: {userEmail: email},//改这里
+                success: function (result) {
+                    if (!(result.success)) {
+                        $("#resetemail").attr("src","icon/right.png");
+                    }else {
+                        $("#resetemail").attr("src","icon/wrong.png");
+                        $("#reset_email").val('result.errorMsg');
+                    }
+                }
+            });
+        }
+    })
+    ;
+
+
+    $("#sendCheckcode").click(function () {
+        var email=$("#reset_email").val();
+        var reg=/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+        if (reg.test(email)){
+            $.ajax({
+                url:"user/verifyCode",//改这里
+                type:"POST",
+                data:{userEmail:email},//改这里
+                success:function (result) {
+                    if (result.success) {
+                        $("#Tsinf").style.visibility="visible";
+                    } else {
+                        alert("result.errorMsg")
+                    }
+                },
+                error:function (data) {
+                    alert("网络错误");
+                }
+            })
+        }
+
+    });
+    $("#reset_password1").blur(function () {
+        var reg = /^[a-zA-Z0-9]{6,16}$/;
+        if (!(($("#reset_password1").val()).match(reg))) {
+            $("#reset_password1").val("密码格式错误");
+            $("#resetpassword1").attr("src","icon/wrong.png");
+        }else {
+            $("#resetpassword1").attr("src","icon/right.png");
+        }
+    });
+
+    $("#reset_password2").blur(function () {
+        var reg = /^[a-zA-Z0-9]{6,16}$/;
+        if (!(($("#reset_password2").val()).match(reg))) {
+            $("#reset_password2").val("密码格式错误");
+            $("#resetpassword2").attr("src","icon/wrong.png");
+        }else {
+            $("#resetpassword2").attr("src","icon/right.png");
+        }
+    });
+
+    $("#reset").click(function () {
+        var pass1=$("#reset_password1").val();
+        var pass2=$("#reset_password2").val();
+        var email=$("#reset_email").val();
+        var verifyCode=$("#reset_checkcode").val();
+        if (pass1==pass2)
+            $.ajax({
+                url:"user/forget",//改这里
+                type:"POST",
+                data:{userEmail:email,password:pass2,verifyCode:verifyCode},
+                success:function (result) {
+                    if (result.success) {
+                        alert("修改成功");
+                        window.location="login.html";
+                    }
+                    else
+                        alert("重置密码失败");
+                },
+            })
+        else {
+            alert("两次输入密码不一致");
+        }
+    });
+</script>
+</html>

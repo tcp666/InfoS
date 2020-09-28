@@ -1,0 +1,294 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+/*字体设置*/
+/*body{*/
+/*    font: 12px/1.3 Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;*/
+/*}*/
+/*滚动条 start*/
+::-webkit-scrollbar {
+    width: 2px;
+    height: 4px;
+    background-color: #fd271d;
+}
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background: #fff ;
+}
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color:rgba(7, 170, 247, 0.7);
+}
+::-webkit-scrollbar-thumb:hover {
+    border-radius: 3px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    /*background-color:rgba(7, 170, 247, 1);*/
+    background-color:rgba(0, 0, 0, .2);
+}
+/*body {*/
+/*    width: 100%;*/
+/*    overflow: auto;*/
+/*}*/
+.mainNav {
+    width: 100%;
+    height: 65px;
+    background-color: #f6fbfd;
+    /*border-top: 2px #ff6025 solid;*/
+    display: flex;
+    justify-content: space-between;
+}
+
+.mainNav > .logo {
+    width: 20%;
+    height: 100%;
+    float: left;
+    background-image: url("../images/logo.png");
+    background-repeat: no-repeat;
+}
+
+.mainNav > .functions {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #6A6F79;
+}
+
+.functions > .search{
+    display: block;
+    width: 40%;
+    height: 35px;
+    /*float: left;*/
+    font-style: normal;
+    background-color: #f2f2f5;
+    line-height: 35px;
+    margin: 15px 0 15px 10px;
+    box-sizing: border-box;
+    border:none;
+    border-radius: 10px;
+    resize: none;
+    /*border: none;*/
+    font-size: 18px;
+    text-decoration: none;
+    outline: none;
+    display-outside:ruby-base-container;
+
+}
+.functions > .search:hover{
+    transform: translateY(-2px);
+}
+/*搜索图标*/
+.functions>img{
+    width: 20px;
+    height: 20px;
+    display: inline;
+    /*margin: 0px;*/
+    position: relative;
+    left: -155px;
+    /*top: 22px;*/
+}
+
+.functions > ul {
+    width:300px;
+    height: 33px;
+    line-height: 33px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    align-items: center;
+    font-family: Arial;
+    text-decoration: none;
+    font-style: normal;
+    /*size: 33px;*/
+    /*overflow: hidden;*/
+    /*border-radius: 3px;*/
+
+
+}
+.functions > ul>li{
+    list-style: none;
+    /*margin: auto 0;*/
+    text-align: center;
+    height: 65px;
+    line-height: 65px;
+    position: relative;
+    left: 0;
+    border-radius: 5px;
+}
+.functions > ul>li>a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: #696E78;
+}
+.functions ul li a:hover{
+    color: #FA7D3C;
+    /*background-color: red;*/
+}
+
+
+/*右侧设置框*/
+.mainNav > .setting {
+    width: 15%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: #696E78;
+
+}
+.mainNav > .setting:before{
+    content: '|';
+    margin-left: -20px;
+    margin-right: 5px;
+    font-size: 20px;
+    color: #D9D9D9;
+}
+.setting>ul{
+    width:100%;
+    height:65px;
+    display: flex;
+    float: right;
+    line-height: 65px;
+    /* margin: 15px 0; */
+    font-family: Arial;
+    text-decoration: none;
+    font-style: normal;
+    size: 33px;
+    /* overflow: hidden; */
+}
+.setting>ul>li{
+    list-style: none;
+    margin: auto 0;
+    text-decoration: none;
+    text-align: center;
+    font-style: normal;
+    width: 50px;
+    /* height: 35px;    */
+    height:65px;
+    line-height: 65px;
+    position: relative;
+
+}
+.setting>ul>li:hover{
+    width: 50px;
+    height: 65px;
+}
+
+/* 下拉框设置 */
+.setting-message:hover::after,
+.message-setting:hover::after{
+    content: '';
+    /* 通过边框设置小三角的效果,四个方位均可设置 
+        width 和 height 的值必须为0
+    */
+    z-index: 99;
+    width: 0;
+    height: 0;
+    border: 10px solid #ffffff;
+    /* border: 10px solid red; */
+    /* border-top: none; */
+    /*border-color: transparent transparent #ffffff ;*/
+    border-color: transparent transparent lightgoldenrodyellow ;
+
+    /* 设置小三角的定位 */
+    position: absolute;
+    /* 小三角放在块底部 */
+    bottom: 0;
+    /* 以下三行代码使小三角水平居中 */
+    left: 0;
+    right: 0;
+    margin: auto;
+    /*box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);*/
+}
+/* 下拉列表出现 */
+.setting-message:hover .drop-down-message,
+.message-setting:hover .drop-down-setting{
+    display: block;
+}
+/* 下拉列表 */
+.setting-message .drop-down-message{
+    width: 150px;
+    height: 220px;
+    position: absolute;
+    right: 0;
+    box-shadow: 1px -1px 10px rgba(0, 0, 0, 0.2);
+    /* border: 1px solid blue; */
+    background-color: #FFFFFF;
+    border-top: none;
+    display: none;
+    z-index: 999;
+}
+.setting a{
+    display: block;
+    width: 140px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    text-align: left;
+    color: #333333;
+    background-color: #FFFFFF;
+}
+.setting-message a:hover{
+    color: #EB7350;;
+}
+.setting-message .drop-down-message .last-mes{
+    border-top: 1px solid #D9D9D9;
+}
+.setting-message .drop-down-message a{
+    text-align: center;
+}
+/*
+    消息的下拉列表
+*/
+.message-wrapper .drop-down-setting{
+    width: 100px;
+    height: 268px;
+    /* border: 1px solid black; */
+    position: absolute;
+    right: 0;
+    box-shadow: 1px -1px 10px rgba(0, 0, 0, 0.2);
+    display: none;
+}
+.message-wrapper a{
+    display: block;
+    width: 100%;
+    color: #333333;
+    font-size: 12px;
+    text-align: center;
+}
+.message-wrapper a:hover{
+    color: #EB7350;
+}
+.drop-down-setting .out{
+    border-top: 1px solid #D9D9D9;
+    /* background-color: red; */
+}
+body>.content{
+    width:100%;
+    height:1000px;
+    margin: 0 auto;
+    /*background: green;*/
+    /*overflow: auto;*/
+    background-image: url("../images/sky.png");
+    background-size: 100%;
+    background-repeat:no-repeat ;
+    display: block;
+    float: left;
+
+}
+.content>.main{
+    width: 60%;
+    height: 800px;
+    display: block;
+    margin: 0 auto;
+    /*overflow: auto;*/
+    /*background-color: silver;*/
+}

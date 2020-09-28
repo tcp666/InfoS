@@ -1,0 +1,637 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+/*滚动条*/
+/*滚动条 start*/
+::-webkit-scrollbar {
+    width: 0;
+    /*width: 4px;*/
+    height: 4px;
+    background-color: rgba(0,0,0, .1);
+    /*background-color: red;*/
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background: #fff;
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: rgba(0,0,0, .1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    border-radius: 3px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: rgba(0,0,0, .1);
+}
+body{
+    height: auto;
+    background:#c8c8c8;
+    background: url("../images/sky.png") ;
+    background-repeat: repeat-y;
+    background-size: cover;
+    background-attachment: fixed;
+    font:600 16px/18px 'Open Sans',sans-serif;
+}
+body .mainNav{
+    position: fixed;
+    z-index: 200;
+}
+.content .main{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    /*顶部导航脱离文档流，设置上外边距为height + border-top*/
+    margin-top: 67px;
+    overflow: auto;
+    /*position: relative;*/
+}
+.left{
+    background-color: transparent;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    width: 16%;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px 0 10px;
+    overflow: hidden;
+}
+.left .nav-left{
+    width: 100%;
+    height: 140px;
+    border-bottom: 1px solid rgba(225,225,225,.5);
+}
+.left .nav-left li{
+    color: #FFF;
+    list-style: none;
+    font-size: 16px;
+    height: 34px;
+    line-height: 34px;
+    padding-left: 15px;
+}
+.left .nav-left li:hover{
+    cursor: pointer;
+    background-color: rgba(255,255,255,0.2);
+}
+.left .classify{
+    width: 100%;
+    height: 200px;
+    margin-top: 20px;
+}
+.classify li{
+    color: #FFF;
+    list-style: none;
+    font-size: 16px;
+    height: 34px;
+    line-height: 34px;
+    padding-left: 15px;
+}
+.classify li:hover{
+    cursor: pointer;
+    background-color: rgba(255,255,255,0.2);
+
+}
+
+.middle{
+    position: relative;
+    width: 58%;
+    height: auto;
+    /*margin-top: 80px;*/
+    /*margin-left: 520px;*/
+}
+.writearticle{
+    /*display: none;*/
+    width: 100%;
+    height: auto;
+    /*margin: 0 auto;*/
+    background-color: white;
+}
+.writearticle>p{
+    display: block;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    margin-top: 20px;
+    color: #6DACD3;
+}
+.writearticle textarea{
+    display: block;
+    resize: none;
+    font-size: 20px;
+    width: 90%;
+    height: 120px;
+    margin: 0 auto;
+    /*outline-color: #8CBDDE;*/
+    outline: none;
+    padding: 10px;
+}
+.toolbar{
+    width: 95%;
+    height: 50px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.toolbar ul{
+    width: 50%;
+    display: flex;
+    justify-items: flex-start;
+}
+.toolbar ul li{
+    margin: 0 20px;
+    cursor: pointer;
+    /*text-shadow: 0 0 1px #333333;*/
+}
+.toolbar ul li:hover i{
+    color: #EB7350;
+}
+.toolbar>ul li i{
+    font-size: 18px;
+    color: #69C5F9;
+}
+/*上传视频按钮*/
+
+/*发送按钮和分类按钮*/
+.article-send-wrapper button{
+    width: 50px;
+    height: 30px;
+    background-color: #EB7350;
+    color: #FFFFFF;
+    outline: none;
+    border: 2px solid #EB7350;
+    box-shadow: 0 0 3px #EB7350;
+    margin-right: 20px;
+    cursor: pointer;
+    /*transition: all 0.3s;*/
+}
+.article-send-wrapper button:active{
+    opacity: 0.5;
+}
+#article-classify{
+    background-color: #84C002;
+    border: 2px solid #84C002;
+    box-shadow: 0 0 3px #84C002;
+}
+
+/*动态列表*/
+.blogs{
+    width: 100%;
+    height: auto;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+.blogs li{
+    width: 100%;
+    /*height: 440px;*/
+    height: auto;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    /*position: relative;*/
+    margin-bottom: 10px;
+    border-radius: 2px;
+
+}
+li .blog-wrapper{
+    width: 94%;
+    /*width: 100%;*/
+    height: auto;
+    padding: 20px 0;
+}
+.blog-user-info{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*padding: 0 20px;*/
+}
+.B-left{
+    display: flex;
+    align-items: center;
+}
+.B-left .left-avatar{
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    border-radius: 25px;
+    margin-right: 5px;
+}
+.left-avatar img{
+    width: 100%;
+    height: 100%;
+}
+.B-left .blog-nickname{
+    font-size: 14px;
+    color: #333333;
+}
+.B-left .send-time{
+    font-size: 10px;
+    color: #808080;
+    margin-top: 5px;
+}
+.appear{
+    /*display: block;*/
+    display: none;
+    transition: all 1s;
+}
+.B-right .blog-setting{
+
+    width: 128px;
+    height: 50px;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    right: 0;
+    box-shadow: 0 0 2px rgba(0,0,0,.2);
+    border: 1px solid rgba(0,0,0,.2);
+    padding: 10px;
+    z-index: 999;
+}
+.blog-setting a{
+    display: block;
+    font-size: 12px;
+    text-decoration: none;
+    color: #333333;
+}
+.blog-setting a:hover{
+    color: #EB7350;
+}
+/*动态内容区*/
+.blog-content{
+    width: 90%;
+    height: auto;
+    background-color: #FFFFFF;
+    margin-left: 50px;
+}
+.blog-content .blog-text{
+    width: 100%;
+    /*height: 40px;*/
+    height: auto;
+    line-height: 25px;
+    word-break: break-word;
+}
+.blog-img-video{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap ;
+    justify-content: center;
+}
+.blog-img-video img{
+    width: 40%;
+    height: auto;
+    margin: 10px;
+
+}
+.blog-img-video video{
+    width: 90%;
+    height: auto;
+    margin:0 auto;
+}
+/*评论转发点赞*/
+.blog-views{
+    width: 100%;
+    height: 30px;
+    /*background-color: red;*/
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    border-top: 1px solid rgba(0,0,0,.1);
+    margin-top: 20px;
+    color: #777B84;
+    font-size: 12px;
+
+}
+.blog-views a{
+    display: block;
+    text-decoration: none;
+    color: #777B84;
+}
+.blog-views a:hover{
+    color: #EB7350;
+}
+
+/*右侧个人信息栏*/
+.right{
+    width: 20%;
+    /*height: 400px;*/
+    height: 0;
+    /*height: auto;*/
+    background-color: red;
+    background-color: transparent;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.right .right-top-wrapper{
+    width: 100%;
+    height: 240px;
+    background-color: #FFFFFF;
+}
+.right .right-top{
+    width: 100%;
+    height: 110px;
+    background-image: url("../images/sky.png");
+    background-size: cover;
+    position: relative;
+    justify-content: space-around;
+    align-items: center;
+}
+.right-user-avatar{
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    border-radius: 50%;
+    /*background: red;*/
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    margin: 0 auto;
+    transform: translateX(-50%);
+}
+.right-top img{
+    width: 100%;
+    height: 100%;
+}
+.right .user-nickname{
+    width: 100%;
+    line-height: 20px;
+    /*background-color: red;*/
+    text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+}
+.user-nickname:hover{
+    color: #EB7350;
+    cursor: pointer;
+}
+.user-infos{
+    width: 90%;
+    height: 20%;
+    line-height: 100%;
+    /*background-color: red;*/
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.user-infos li{
+    text-align: center;
+}
+.user-infos li .nums{
+    color: #333333;
+    font-size: 16px;
+}
+.user-infos li .nums:hover{
+    color: #EB7350;
+    cursor: pointer;
+}
+.user-infos .na{
+    margin-top: 5px;
+    color: #808080;
+    font-size: 12px;
+}
+
+/*上传图片功能*/
+.upload-content-img{
+    display: none;
+    width: 100%;
+    margin: 0 auto;
+    /*height: auto;*/
+    font-size: 12px;
+    color: #666;
+    /*padding: 20px;*/
+    background: #fff;
+}
+.content-img{
+    width: 96%;
+    height: auto;
+    padding: 10px;
+}
+.content-img-list{
+    /*display: inline;*/
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.content-img-list-item{
+    position: relative;
+    display: inline-block;
+    /*width: 165px;*/
+    /*height: 96px;*/
+    width: 240px;
+    height: 150px;
+    /*margin-top: 20px;*/
+    margin-left: 7px;
+    margin-bottom: 5px;
+}
+.content-img-list-item:first-child,
+.content-img-list-item:nth-child(3){
+    margin-left: 0;
+}
+.content-img-list-item:nth-child(4),
+.content-img-list-item:nth-child(3){
+    margin-top: 10px;
+}
+.content-img-list-item .hide{
+    display: none;
+}
+.content-img-list-item .delete-btn{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    background: rgba(0,0,0,0.1);
+    height: 28px;
+    line-height: 28px;
+    color: #fff;
+    cursor: pointer;
+}
+.delete-btn:after{
+    content: '删除';
+}
+.content-img-list-item .ico-delete{
+    display: inline-block;
+    vertical-align: middle;
+    width: 12px;
+    height: 13px;
+    background: url('https://caiyunupload.b0.upaiyun.com/newweb/imgs/icon-delete.png') center/12px 13px;
+}
+.content-img-list-item img{
+    /*width: 165px;*/
+    /*height: 96px;*/
+    width: 100%;
+    height: 100%;
+    /*margin-left: 10px;*/
+}
+ .upload-tips{
+    padding-top: 10px;
+    text-align: right;
+    width: 100%;
+}
+/*图片上传按钮*/
+.file {
+    position: sticky;
+    display: block;
+    border: 1px dashed #DEDEDE;
+    border-radius: 4px;
+    color: #999999;
+    text-decoration: none;
+    text-indent: 0;
+    text-align: center;
+    vertical-align: baseline;
+    width: 165px;
+    height: 96px;
+    line-height: 96px;
+    margin-left: 10px;
+    /*margin-top: 10px;*/
+    font-size: 14px;
+}
+.file i{
+    color: #EB7350;
+    margin-right: 5px;
+}
+.file input {
+    position: absolute;
+    font-size: 20px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+    width: 165px;
+    height: 96px;
+}
+.file:hover {
+    color: #999999;
+}
+
+/*上传视频功能*/
+.video-upload-wrapper{
+    display: none;
+    width: 100%;
+    margin: 0 auto;
+    /*height: 98px;*/
+    height: auto;
+    font-size: 12px;
+    color: #666;
+    /*padding: 20px;*/
+    background: #fff;
+}
+.video-upload{
+    width: 96%;
+    height: 98px;
+    padding: 10px;
+    background-color: #FFFFFF;
+}
+/*图片上传按钮*/
+.videos {
+    position: sticky;
+    display: block;
+    border: 1px dashed #DEDEDE;
+    border-radius: 4px;
+    color: #999999;
+    text-decoration: none;
+    text-indent: 0;
+    text-align: center;
+    vertical-align: baseline;
+    width: 165px;
+    height: 96px;
+    line-height: 96px;
+    margin-left: 10px;
+    /*margin-top: 10px;*/
+    font-size: 14px;
+}
+.videos i{
+    color: #EB7350;
+    margin-right: 5px;
+}
+.videos input {
+    position: absolute;
+    font-size: 20px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+    width: 165px;
+    height: 96px;
+}
+.videos:hover {
+    color: #999999;
+    cursor: pointer;
+}
+
+
+.upload-submit{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.link-top {
+    margin-top: 10px;
+    width: 100%;
+    /*height: 2px;*/
+    border-top: solid #ACC0D8 1px;
+}
+.box{
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    background-color: white;
+}
+
+.box>input{
+    display: none;
+}
+
+label{
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    position: relative;
+    line-height: 50px;
+    color: #999;
+}
+label:active{
+    background: #EEEEEE;
+}
+label:after{
+    content: "";/*必须设置*/
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid white;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    border-radius: 20px;
+}
+
+input:checked+label:after{
+    background-color: green;
+}
+
+.line{
+    width: 100%;
+    height: 1px;
+    background: #ccc;
+    opacity: 0.2;
+}
+.files{
+    display: none;
+}

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>私信</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/chatroom.css">
+    <link rel="stylesheet" href="./css/font/css/all.css">
+    <link rel="icon" href="./images/logo.png" type="image/x-icon"/>
+</head>
+
+<body>
+<nav class="mainNav" style="display: none;">
+    <div class="logo">
+
+    </div>
+    <div class="functions">
+        <textarea class="search" placeholder="大家正在搜:真相奶茶"></textarea><img src="images/search.png" alt="">
+        <ul>
+            <li><a href="">我要写走测试</a></li>
+            <li><a href="home.html">首页</a></li>
+            <li><a href="video.html">视频</a></li>
+            <li><a href="">发现</a></li>
+            <li><a href="">游戏</a></li>
+        </ul>
+    </div>
+    <div class="setting">
+        <ul>
+            <li class="setting-message">
+                <!-- 下拉小三角 -->
+                消息
+                <div class="setting-wrapper">
+                    <!-- <div class="triangle"></div> -->
+                    <ul class="drop-down-message">
+                        <li><a href="javascript:;">@我的</a></li>
+                        <li><a href="javascript:;">评论</a></li>
+                        <li><a href="javascript:;">赞</a></li>
+                        <li><a href="javascript:;">私信</a></li>
+                        <li><a href="javascript:;">未关注人私信</a></li>
+                        <li><a href="javascript:;">群通知</a></li>
+                        <li class="last-mes"><a href="javascript:;">消息设置</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="message-setting">
+                设置
+                <div class="message-wrapper">
+                    <ul class="drop-down-setting">
+                        <li><a href="javascript:;">账号设置</a></li>
+                        <li><a href="javascript:;">会员中心</a></li>
+                        <li><a href="javascript:;">V认证</a></li>
+                        <li><a href="javascript:;">账号安全</a></li>
+                        <li><a href="javascript:;">隐私设置</a></li>
+                        <li><a href="javascript:;">屏蔽设置</a></li>
+                        <li><a href="javascript:;">消息设置</a></li>
+                        <li><a href="javascript:;">帮助中心</a></li>
+                        <li><a href="javascript:;" class="out">退出</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>其他</li>
+        </ul>
+    </div>
+</nav>
+<div class="content">
+    <div class="main">
+        <!-- 左侧 联系人列表 -->
+        <div class="main-left">
+            <div class="left-top">
+                <div class="avatar-wrapper">
+                    <a href = "person.html"><img src="./images/avatar.jpg" alt="图像"></a>
+                </div>
+                <span class="nickname">Jack</span>
+            </div>
+            <!-- 搜索框 -->
+            <div class="left-search-wrapper">
+                <div class="left-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="查找联系人或群">
+                </div>
+            </div>
+            <!-- 联系人列表 -->
+            <div class="left-userList-wrapper">
+                <ul class="left-userList" id="left-userList">
+
+                    <li>
+                        <div class="user-avatar-wrapper">
+                            <a href="javascript:;"><img src="./images/avatar.jpg" alt="头像"></a>
+                        </div>
+                        <div class="user-info">
+                            <div class="user-info-top">
+                                <a href="javascript:;">
+                                    <div class="user-name">超话社区</div>
+                                </a>
+                                <div class="time">05-25</div>
+                            </div>
+                            <div class="user-info-content">【签到提醒】</div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <!-- 聊天框 -->
+        <div class="main-right">
+            <!-- 没有联系人时显示 -->
+            <div class="no-chat">
+                <p>您还未选中或发起聊天，快去跟好友聊一聊吧</p>
+            </div>
+            <!-- 聊天框设置 -->
+            <div class="main-right-header">
+                <a href="person.html">
+                    <div class="nickname" id="friend_id">Pony__朴慧敏</div>
+                </a>
+            </div>
+            <!-- 显示对话内容 -->
+            <div class="messages-wrapper">
+                <div class="messages" id="messages">
+                    <!-- 显示对话时间 -->
+<!--                    <p class="time">05-31 15:40</p>-->
+<!--                     对话左侧-->
+<!--                                        <div class="user-left">-->
+<!--                                            <div class="img-wrapper-left">-->
+<!--                                                <img src = "./images/avatar.jpg" alt = "头像">-->
+<!--                                            </div>-->
+<!--                                            &lt;!&ndash;向上的小三角&ndash;&gt;-->
+<!--                                            <div class="triangle-left"></div>-->
+<!--                                            <div class="mes-left"></div>-->
+<!--                                        </div>-->
+<!--&lt;!&ndash;                      对话右侧&ndash;&gt;-->
+<!--                                        <div class="user-right">-->
+<!--                                            <div class="img-wrapper-right">-->
+<!--                                                <img src = "./images/avatar.jpg" alt = "头像">-->
+<!--                                            </div>-->
+<!--                                            &lt;!&ndash;向上的小三角&ndash;&gt;-->
+<!--                                            <div class="triangle-right"></div>-->
+<!--                                            <div class="mes-right"></div>-->
+<!--                                        </div>-->
+
+                </div>
+                <div class="text">
+                    <div class="text-top">
+                        <a href="javascript:;"><i class="fas fa-smile"></i></a>
+                        <a href="javascript:;"><i class="fas fa-image"></i></a>
+                        <a href="javascript:;"><i class="fas fa-link"></i></a>
+                        <a href="javascript:;"><i class="fas fa-bell"></i></a>
+
+                    </div>
+                    <div class="text-input">
+                        <!--required规定文本区域为必填的
+                            autofocus 自动获取焦点
+                        -->
+                        <textarea name="text-mes" id="text-mes" class="text-mes" required autofocus></textarea>
+                    </div>
+                    <input type="button" value="send" id="send">
+                </div>
+
+            </div>
+            <!--            <div class="box1">-->
+            <!--                <ul id="chatrecord">-->
+            <!--                    <li></li>-->
+            <!--                </ul>-->
+            <!--            </div>-->
+
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery1111.min.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<script>
+
+
+    let comId = $.cookie("userId");
+    let socket = null;
+    var userId=null;
+    var wsUrl="ws:"+window.location.host+"//websocket/"+comId
+    onload = function () {
+        // socket = new WebSocket("ws:localhost:80//websocket/" + comId);
+        socket = new WebSocket(wsUrl);
+        socket.onopen = function () {
+            console.log("454546")
+        }
+        socket.onmessage = function (data) {
+            console.log("data:" + data)
+            var record = JSON.parse(data.data);
+            var div = "    <div class=\"user-left\">\n" +
+                "                        <div class=\"img-wrapper-left\">\n" +
+                "                            <img src = \"./images/avatar.jpg\" alt = \"头像\">\n" +
+                "                        </div>\n" +
+                "                        <!--向上的小三角-->\n" +
+                "                        <div class=\"triangle-left\"></div>\n" +
+                "                        <div class=\"mes-left\">" + record.comUserId + ":" + record.message + "</div>\n" +
+                "                    </div>"
+            $("#messages").append(div);
+
+            var messages = document.getElementById("messages");
+            messages.scrollTop=messages.scrollHeight;
+        }
+
+
+        $.ajax({
+                url: "user/getAllUser",
+                type: "POST",
+                data: {},
+                dataType: "JSON",
+                success: function (data) {
+                    console.log(data);
+                    for (var i = 0; i < data.length; i++) {
+                        if (data[i].userId != comId) {
+                            var li = "  <li onclick='chat(this)' id='"+data[i].userId+"'>\n" +
+                                "                            <div class=\"user-avatar-wrapper\">\n" +
+                                "                                <a href = \"javascript:;\"><img src=\"./images/avatar.jpg\" alt=\"头像\"></a>\n" +
+                                "                            </div>\n" +
+                                "                            <div class=\"user-info\">\n" +
+                                "                                <div class=\"user-info-top\">\n" +
+                                "                                    <a href = \"javascript:;\">" +
+                                "<div class=\"user-name\">" +data[i].userName + "</div>" +
+                                "</a>\n" +
+                                "                                    <div class=\"time\">05-25</div>\n" +
+                                "                                </div>\n" +
+                                "                                <div class=\"user-info-content\">【签到提醒】</div>\n" +
+                                "                            </div>\n" +
+                                "                    </li>\n" +
+                                "                  "
+                            $("#left-userList").append(li);
+                        }
+                    }
+                },
+                error: function () {
+                    console.log("400000000000")
+                }
+
+            }
+        )
+
+    }
+    $("#send").click(function () {
+        var text = $("#text-mes").val();
+        console.log("text:" + text)
+        var toId = $("#friend_id").text();
+        var data = {
+            toUserId: userId,
+            comUserId: comId,
+            message: text,
+            recordTime: new Date()
+        }
+        var div = "    <div class=\"user-right\">\n" +
+            "                        <div class=\"img-wrapper-right\">\n" +
+            "                            <img src = \"./images/avatar.jpg\" alt = \"头像\">\n" +
+            "                        </div>\n" +
+            "                        <!--向上的小三角-->\n" +
+            "                        <div class=\"triangle-right\"></div>\n" +
+            "                        <div class=\"mes-right\">"+text+"</div>\n" +
+            "                    </div>"
+        $("#messages").append(div);
+        socket.send(JSON.stringify(data))
+
+        var messages = document.getElementById("messages");
+        messages.scrollTop=messages.scrollHeight;
+        // document.getElementById("text-mes").innerText="";
+        document.getElementById("text-mes").value="";
+    })
+
+    function chat(obj) {
+
+        userId = obj.id;
+        comId=$.cookie("userId");
+        console.log("to:"+userId+"com"+comId)
+        var user_Name=document.getElementById(userId).children[1].children[0].children[0].innerText;
+        $("#friend_id").html(user_Name)
+        $("#user-right").html("")
+
+        $.ajax({
+            url:"chat/getRecords",
+            data: {
+                comUserId:comId,
+                toUserId: userId
+            },
+            type: "POST",
+            success:function (data) {
+                console.log(data)
+                    for (var i=0,length=data.length;i<length;i++){
+                        if (data[i].comUserId==comId){
+                            var div = "    <div class=\"user-right\">\n" +
+                                "                        <div class=\"img-wrapper-right\">\n" +
+                                "                            <img src = \"./images/avatar.jpg\" alt = \"头像\">\n" +
+                                "                        </div>\n" +
+                                "                        <!--向上的小三角-->\n" +
+                                "                        <div class=\"triangle-right\"></div>\n" +
+                                "                        <div class=\"mes-right\">"+data[i].message+"</div>\n" +
+                                "                    </div>"
+                            $("#messages").append(div);
+
+                        }
+                        else {
+
+                            var divr = "    <div class=\"user-left\">\n" +
+                                "                        <div class=\"img-wrapper-left\">\n" +
+                                "                            <img src = \"./images/avatar.jpg\" alt = \"头像\">\n" +
+                                "                        </div>\n" +
+                                "                        <!--向上的小三角-->\n" +
+                                "                        <div class=\"triangle-left\"></div>\n" +
+                                "                        <div class=\"mes-left\">" + data[i].comUserId + ":" + data[i].message + "</div>\n" +
+                                "                    </div>"
+                            $("#messages").append(divr);
+                            var messages = document.getElementById("messages");
+                            messages.scrollTop=messages.scrollHeight;
+                        }
+                    }
+
+            }
+
+        })
+    }
+</script>
+
+
+</body>
+</html>

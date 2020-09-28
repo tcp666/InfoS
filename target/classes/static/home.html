@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="./css/font/css/all.css">
+    <link rel="shortcut icon" href="./images/logo.png">
+</head>
+<body>
+
+<nav class="mainNav" style="z-index: 9">
+    <div class="logo">
+
+    </div>
+    <div class="functions">
+        <textarea class="search" placeholder="大家正在搜:真相奶茶" id="search"></textarea><img src="images/search.png" alt=""
+                                                                          onclick="search()">
+        <ul>
+            <li><a href="person.html" id="person"></a></li>
+            <li><a href="home.html">首页</a></li>
+            <li><a href="video.html">视频</a></li>
+            <li><a href="mynote.html">关注</a></li>
+            <li><a href="chatroom.html" onclick="function f() {
+                document.getElementById('notices').innerText=0;
+              document.getElementById('notices').style.display='none';
+            }">聊天</a></li>
+        </ul>
+    </div>
+    <div class="setting">
+        <ul>
+            <li class="setting-message">
+                <!-- 下拉小三角 -->
+                消息<p id="notices" style="display: none">0</p>
+                <div class="setting-wrapper">
+                    <!-- <div class="triangle"></div> -->
+                    <ul class="drop-down-message">
+                        <li><a href="javascript:;">@我的</a></li>
+                        <li><a href="javascript:;">评论</a></li>
+                        <li><a href="javascript:;">赞</a></li>
+                        <li><a href="javascript:;">私信</a></li>
+                        <li><a href="javascript:;">未关注人私信</a></li>
+                        <li><a href="javascript:;">群通知</a></li>
+                        <li class="last-mes"><a href="javascript:;">消息设置</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="message-setting">
+                设置
+                <div class="message-wrapper">
+                    <ul class="drop-down-setting">
+                        <li><a href="javascript:;">账号设置</a></li>
+                        <li><a href="javascript:;">会员中心</a></li>
+                        <li><a href="javascript:;">V认证</a></li>
+                        <li><a href="javascript:;">账号安全</a></li>
+                        <li><a href="javascript:;">隐私设置</a></li>
+                        <li><a href="javascript:;">屏蔽设置</a></li>
+                        <li><a href="javascript:;">消息设置</a></li>
+                        <li><a href="javascript:;">帮助中心</a></li>
+                        <li><a href="javascript:;" class="out">退出</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>其他</li>
+        </ul>
+    </div>
+</nav>
+<div class="content">
+    <div class="main">
+        <div id="left" class="left">
+            <ul class="nav-left">
+                <li onclick="window.location.href='home.html'">首页</li>
+                <li id="collect">我的收藏</li>
+                <li>我的赞</li>
+            </ul>
+            <!-- 动态分类 -->
+            <ul class="classify">
+                <li>生活</li>
+                <li>游戏</li>
+                <li>学习</li>
+                <li></li>
+            </ul>
+        </div>
+        <div id="middle" class="middle">
+            <div class="writearticle" id="writearticle">
+                <p>有什么新鲜事要分享给大家</p>
+                <textarea id="messageInfo"></textarea>
+<!--                <div class="link-top"></div>-->
+                <div class="toolbar">
+                    <ul>
+                        <li><i class="fas fa-images" id="pic"></i></li>
+                        <li><i class="fas fa-video" id="vid"></i></li>
+                        <li><i class="fas fa-smile"></i></li>
+                        <li><i class="fas fa-eye"></i></li>
+                    </ul>
+                    <div class="article-send-wrapper">
+                        <button id="article-classify">分类</button>
+                        <button id="article-send">发布</button>
+                    </div>
+                </div>
+            </div>
+            <!-- 上传图片功能 -->
+            <div class="upload-content-img">
+                <div class="content-img">
+                    <ul class="content-img-list">
+                        <!-- <li class="constent-img-list-item"><img src="https://www.baidu.com/img/bd_logo1.png" alt=""><a class="delete-btn">delete<i class="ico-delete"></i></a></li> -->
+                    </ul>
+                    <div class="file">
+                        <i class="fas fa-plus"></i><span id="up-pic">上传图片</span>
+                        <form action="" enctype="multipart/form-data" name="file" id="" method="post">
+                            <input type="file" name="file" accept="image/*" id="upload" title="最多只能上传四张图片">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="video-upload-wrapper">
+                <div class="video-upload">
+                    <div class="videos">
+                        <i class="fas fa-plus"></i><span id="up-video">上传视频</span>
+                        <form action="" name="uploadvid" enctype="multipart/form-data" id="uploadvid" method="post" title="只能上传一个视频">
+                            <input type="file" accept="video/*" id="files" class="files" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <ul id="seclctlable" class="seclctlable">
+
+            </ul>
+            <ul class="blogs">
+
+            </ul>
+        </div>
+        <div id="right" class="right">
+            <div class="right-top-wrapper">
+                <div class="right-top">
+                    <div class="right-user-avatar">
+                        <img src="" alt="头像" id="headp" onclick="window.location.href='person.html'">
+                    </div>
+                </div>
+                <p class="user-nickname">
+                    <span></span>
+                </p>
+                <ul class="user-infos">
+                    <li>
+                        <div id="follow-num" class="nums">3</div>
+                        <div class="na">关注</div>
+                    </li>
+                    <li>
+                        <div id="fans-num" class="nums">3</div>
+                        <div class="na">粉丝</div>
+                    </li>
+                    <li>
+                        <div id="blogs-num" class="nums">3</div>
+                        <div class="na">动态</div>
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+
+
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<script src="js/home.js"></script>
+<script>
+    var videoBtn = document.getElementsByClassName("fa-video")[0];
+    var imagesBtn = document.getElementsByClassName("fa-images")[0];
+    var uploadImg = document.getElementsByClassName("upload-content-img")[0];
+    var videoUpload = document.getElementsByClassName("video-upload-wrapper")[0];
+
+    videoBtn.onclick = function(){
+        uploadImg.style.display = "none";
+        videoUpload.style.display = "block";
+    };
+
+    imagesBtn.onclick = function(){
+        videoUpload.style.display = "none";
+        uploadImg.style.display = "block";
+
+    };
+</script>
+
+<script>
+
+    // var modify = document.getElementsByClassName("modify")[0];
+    // modify.onclick = function(){
+    //     // alert("test");
+    //     var modifyWrapper = document.getElementsByClassName("modify-wrapper")[0];
+    //     modifyWrapper.style.display = "block";
+    //
+    // };
+
+    $("#person").innerText=$.cookie("userName");
+</script>
+</html>

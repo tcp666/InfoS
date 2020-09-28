@@ -28,7 +28,7 @@ window.onload = function () {
 
         console.log("你收到了来自" + record.comUserId + "的消息");
     }
-
+////////////////////////////////////////////////////
 
 
     page(pagenum);

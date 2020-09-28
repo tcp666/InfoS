@@ -24,5 +24,5 @@ public interface ChatRecordMapper {
      */
     @Select("select *\n" +
             "from chatrecord where comUserId=#{comUserId} and toUserId=#{toUserId} or comUserId=#{toUserId} and toUserId=#{comUserId} order by recordTime ASC;")
-    List<ChatRecord> findAll(@NotNull String comUserId,@NotNull String toUserId);
+    List<ChatRecord> findAll(@NotNull String comUserId, @NotNull String toUserId);
 }

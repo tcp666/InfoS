@@ -496,7 +496,7 @@ $("#collect").click(function () {
 
 function readArticle(obj) {
     $.cookie("messageId", obj.parentNode.parentNode.parentNode.id);
-    window.location.href = "particulars.js";
+    window.location.href = "particulars.html";
 }
 
 
